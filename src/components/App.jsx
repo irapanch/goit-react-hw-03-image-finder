@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
-import { StyledApp } from 'styles/App.Styled';
+import { StyledApp, StyledFailure } from 'styles/App.Styled';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Modal } from './Modal/Modal';
@@ -10,14 +10,14 @@ import { Loader } from './Loader/Loader';
 class App extends Component {
   state = {
     gallery: [],
-    isLoading: false,
-    error: null,
     page: 1,
     q: null,
+    isLoading: false,
+    error: null,
     isOpen: false,
     modalImage: '',
-    altModal: '',
     max: 0,
+    altModal: '',
   };
 
   async componentDidUpdate(_, prevState) {
@@ -75,9 +75,14 @@ class App extends Component {
         <Searchbar onSubmit={this.handleSubmit} />
 
         {isLoading && <Loader />}
-        {error && <h2>Ooop... Something went wrong </h2>}
+        {error && (
+          <StyledFailure>Ooops... Something went wrong! </StyledFailure>
+        )}
         {!gallery.length && q && !isLoading && (
-          <h1>Nothing here!!! Try again </h1>
+          <StyledFailure>
+            Sorry, there are no images matching your search query. Please try
+            again!
+          </StyledFailure>
         )}
         <ImageGallery
           handleToggleModal={this.handleToggleModal}

@@ -1,13 +1,16 @@
 import React from 'react';
-import { RotatingLines } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
-    <RotatingLines
-      strokeColor="rgb(122, 62, 62)"
-      strokeWidth="5"
-      animationDuration="0.75"
-      width="80"
+    <BallTriangle
+      height={70}
+      width={70}
+      radius={5}
+      color="rgb(122, 62, 62)"
+      ariaLabel="ball-triangle-loading"
+      wrapperClass={{}}
+      wrapperStyle=""
       visible={true}
     />
   );
