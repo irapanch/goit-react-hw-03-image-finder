@@ -11,6 +11,15 @@ export const StyledOverlay = styled.div`
 `;
 
 export const StyledModal = styled.div`
-  max-width: 85%;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 24px);
+  border-radius: 5%;
+  margin: auto;
+`;
+
+export const StyledModalImg = styled.img`
+  max-width: 70%;
   max-height: auto;
+  border-radius: 5%;
+  margin: auto;
 `;

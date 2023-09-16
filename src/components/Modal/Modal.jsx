@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyledModal, StyledOverlay } from './Modal.Styled';
+import { StyledModal, StyledModalImg, StyledOverlay } from './Modal.Styled';
 
 export class Modal extends Component {
   componentDidMount() {
@@ -28,7 +28,10 @@ export class Modal extends Component {
     return (
       <StyledOverlay onClick={this.onBackDropClick}>
         <StyledModal>
-          <img src={this.props.modalImage} alt={this.props.altModal} />
+          <StyledModalImg
+            src={this.props.modalImage}
+            alt={this.props.altModal}
+          />
         </StyledModal>
       </StyledOverlay>
     );
